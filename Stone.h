@@ -78,7 +78,6 @@ void St_SetRot(Stone *st, char rot)
   (*st).rot = rot;
   switch((*st).type)
   {
-    //TODO: Sort out T Stone 1 pixel issue
     case TStone: 
     {
       switch(rot)
@@ -87,23 +86,23 @@ void St_SetRot(Stone *st, char rot)
         {
           (*st).field[0] = B00000000;
           (*st).field[1] = B00000000;
-          (*st).field[2] = B00011000;
-          (*st).field[3] = B00011000;
-          (*st).field[4] = B01111110;
-          (*st).field[5] = B01111110;
+          (*st).field[2] = B00110000;
+          (*st).field[3] = B00110000;
+          (*st).field[4] = B11111100;
+          (*st).field[5] = B11111100;
           (*st).field[6] = B00000000;
           (*st).field[7] = B00000000;
         } break;
 
         case 1: 
         {
-          (*st).field[0] = B00000000;
-          (*st).field[1] = B01100000;
-          (*st).field[2] = B01100000;
-          (*st).field[3] = B01111000;
-          (*st).field[4] = B01111000;
-          (*st).field[5] = B01100000;
-          (*st).field[6] = B01100000;
+          (*st).field[0] = B00110000;
+          (*st).field[1] = B00110000;
+          (*st).field[2] = B00111100;
+          (*st).field[3] = B00111100;
+          (*st).field[4] = B00110000;
+          (*st).field[5] = B00110000;
+          (*st).field[6] = B00000000;
           (*st).field[7] = B00000000;
         } break;
 
@@ -111,23 +110,23 @@ void St_SetRot(Stone *st, char rot)
         {
           (*st).field[0] = B00000000;
           (*st).field[1] = B00000000;
-          (*st).field[2] = B01111110;
-          (*st).field[3] = B01111110;
-          (*st).field[4] = B00011000;
-          (*st).field[5] = B00011000;
+          (*st).field[2] = B11111100;
+          (*st).field[3] = B11111100;
+          (*st).field[4] = B00110000;
+          (*st).field[5] = B00110000;
           (*st).field[6] = B00000000;
           (*st).field[7] = B00000000;
         } break;
 
         case 3: 
         {
-          (*st).field[0] = B00000000;
-          (*st).field[1] = B00011000;
-          (*st).field[2] = B00011000;
-          (*st).field[3] = B01111000;
-          (*st).field[4] = B01111000;
-          (*st).field[5] = B00011000;
-          (*st).field[6] = B00011000;
+          (*st).field[0] = B00001100;
+          (*st).field[1] = B00001100;
+          (*st).field[2] = B00111100;
+          (*st).field[3] = B00111100;
+          (*st).field[4] = B00001100;
+          (*st).field[5] = B00001100;
+          (*st).field[6] = B00000000;
           (*st).field[7] = B00000000;
         } break;
       }
@@ -293,6 +292,7 @@ void St_BackRotate(Stone *st)
   St_SetRot(st, rot);
 }
 
+//Stones not trully Random
 Stone St_InitStone()
 {
   Stone st;

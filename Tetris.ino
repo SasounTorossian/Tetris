@@ -5,6 +5,8 @@
 #include <SPI.h>
 #include "Tetris.h"
 
+//TODO: Refactor Code: Renames, Convert from .ino, to .cpp. Use correct form of headers
+
 void setup() {
   Serial.begin(9600);
 
