@@ -16,6 +16,7 @@ void setup() {
 
   // Show initial display buffer contents on the screen --
   // the library initializes this with an Adafruit splash screen.
+  //TODO: Add name
   display.display();
   delay(2000); // Pause for 2 seconds
 

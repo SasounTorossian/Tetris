@@ -33,6 +33,7 @@ void Te_Draw()
   St_Print(currentStone, BLACK);
 }
 
+//TODO: Delete 2 rows at same time
 void Te_DeleteRow(int row)
 {
   for (int i = 0; i < 15; i++)
@@ -87,16 +88,16 @@ void Te_CheckRows()
 
 void Te_Reload()
 {
-  for (int row = 1; row < TE_HEIGHT + 1; row++)
+  for (int row = 1; row < TE_WIDTH + 1; row++)
   {
-    display.drawLine(1, row, 30, row, WHITE);
+    display.drawLine(row, 1, row, 30, WHITE);
     display.display();
     delay(60);
   }
   delay(400);
-  for (int row = TE_HEIGHT; row >= 1 ; row--)
+  for (int row = TE_WIDTH; row >= 1 ; row--)
   {
-    display.drawLine(1, row, 30, row, BLACK);
+    display.drawLine(row, 1, row, 30, BLACK);
     display.display();
     delay(60);
   }
@@ -104,7 +105,7 @@ void Te_Reload()
   points = 0;
 }
 
-
+//TODO: Add score counter
 void Te_Update(long frameCount)
 {
   if (frameCount % 40  == 0)

@@ -14,8 +14,8 @@ enum Stone_Type {
 
 struct Stone {
   byte field[8];
-  char x = 1;
-  char y = TE_HEIGHT/2;
+  char x = 1;           // X position of stone start
+  char y = TE_HEIGHT/2; // Y position of stone start
   char rot = 0;
   Stone_Type type;
 };
@@ -78,6 +78,7 @@ void St_SetRot(Stone *st, char rot)
   (*st).rot = rot;
   switch((*st).type)
   {
+    //TODO: Sort out T Stone 1 pixel issue
     case TStone: 
     {
       switch(rot)
@@ -86,10 +87,10 @@ void St_SetRot(Stone *st, char rot)
         {
           (*st).field[0] = B00000000;
           (*st).field[1] = B00000000;
-          (*st).field[2] = B00110000;
-          (*st).field[3] = B00110000;
-          (*st).field[4] = B11111100;
-          (*st).field[5] = B11111100;
+          (*st).field[2] = B00011000;
+          (*st).field[3] = B00011000;
+          (*st).field[4] = B01111110;
+          (*st).field[5] = B01111110;
           (*st).field[6] = B00000000;
           (*st).field[7] = B00000000;
         } break;
@@ -97,12 +98,12 @@ void St_SetRot(Stone *st, char rot)
         case 1: 
         {
           (*st).field[0] = B00000000;
-          (*st).field[1] = B00110000;
-          (*st).field[2] = B00110000;
-          (*st).field[3] = B00111100;
-          (*st).field[4] = B00111100;
-          (*st).field[5] = B00110000;
-          (*st).field[6] = B00110000;
+          (*st).field[1] = B01100000;
+          (*st).field[2] = B01100000;
+          (*st).field[3] = B01111000;
+          (*st).field[4] = B01111000;
+          (*st).field[5] = B01100000;
+          (*st).field[6] = B01100000;
           (*st).field[7] = B00000000;
         } break;
 
@@ -110,10 +111,10 @@ void St_SetRot(Stone *st, char rot)
         {
           (*st).field[0] = B00000000;
           (*st).field[1] = B00000000;
-          (*st).field[2] = B11111100;
-          (*st).field[3] = B11111100;
-          (*st).field[4] = B00110000;
-          (*st).field[5] = B00110000;
+          (*st).field[2] = B01111110;
+          (*st).field[3] = B01111110;
+          (*st).field[4] = B00011000;
+          (*st).field[5] = B00011000;
           (*st).field[6] = B00000000;
           (*st).field[7] = B00000000;
         } break;
@@ -121,12 +122,12 @@ void St_SetRot(Stone *st, char rot)
         case 3: 
         {
           (*st).field[0] = B00000000;
-          (*st).field[1] = B00001100;
-          (*st).field[2] = B00001100;
-          (*st).field[3] = B00111100;
-          (*st).field[4] = B00111100;
-          (*st).field[5] = B00001100;
-          (*st).field[6] = B00001100;
+          (*st).field[1] = B00011000;
+          (*st).field[2] = B00011000;
+          (*st).field[3] = B01111000;
+          (*st).field[4] = B01111000;
+          (*st).field[5] = B00011000;
+          (*st).field[6] = B00011000;
           (*st).field[7] = B00000000;
         } break;
       }
